@@ -1,6 +1,6 @@
 // following https://rust-lang.github.io/rust-bindgen/tutorial-3.html
-#include <perl.h>
 #include <EXTERN.h>
+#include <perl.h>
 #include "XSUB.h"
 
 /* 1 = clean out filename's symbol table after each request,
