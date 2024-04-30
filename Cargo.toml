@@ -10,6 +10,11 @@ path = "src/main.rs"
 
 [build-dependencies]
 bindgen = "0.69.4"
+cc = "1.0.95"
 
 [dependencies]
+cc = "1.0.95"
 clap = "4.5.4"
+
+[dev-dependencies]
+cc = "1.0.95"
