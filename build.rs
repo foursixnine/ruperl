@@ -33,6 +33,12 @@ fn main() {
         .stdout;
     let ldopts_command = String::from_utf8_lossy(&ldopts);
     let ldopts_iter = ldopts_command.split_whitespace();
+    let perl_inc = Command::new("perl")
+        .args(&["-MExtUtils::Embed", "-e", "perl_inc"])
+        .output()
+        .expect("Failed to get perl_inc")
+        .stdout;
+    let perl_inc_command = String::from_utf8_lossy(&perl_inc).trim().to_string();
 
     // Tell cargo to link the perlxsi object file
     for opt in ldopts_iter {
@@ -56,7 +62,7 @@ fn main() {
 
     let bindings = bindgen::Builder::default()
         .header("perl-boilerplate/wrapper.h")
-        .clang_arg("-I/opt/homebrew/opt/perl/lib/perl5/5.38/darwin-thread-multi-2level/CORE")
+        .clang_arg(perl_inc_command)
         .parse_callbacks(Box::new(bindgen::CargoCallbacks::new()))
         .generate()
         .expect("Unable to generate bindings");
