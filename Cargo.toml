@@ -1,7 +1,15 @@
 [package]
 name = "ruperl"
-version = "0.1.0"
+version = "0.0.1-alpha.1"
 edition = "2021"
+license = "Apache-2.0"
+description = "A library for embedding perl in your rust project"
+homepage = "https://foursixnine.io"
+repository = "https://github.com/foursixnine/ruperl"
+keywords = ["perl", "embedded", "embed", "cpan"]
+
+[badges]
+maintenance = { status = "experimental,actively-developed" }
 
 # See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
 [[bin]]
@@ -13,8 +21,4 @@ bindgen = "0.69.4"
 cc = "1.0.95"
 
 [dependencies]
-cc = "1.0.95"
 clap = "4.5.4"
-
-[dev-dependencies]
-cc = "1.0.95"
