@@ -11,10 +11,9 @@ keywords = ["perl", "embedded", "embed", "cpan"]
 [badges]
 maintenance = { status = "experimental,actively-developed" }
 
-# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
-[[bin]]
+[lib]
 name = "ruperl"
-path = "src/main.rs"
+path = "src/lib.rs"
 
 [build-dependencies]
 bindgen = "0.69.4"
